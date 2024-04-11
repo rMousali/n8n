@@ -36,6 +36,7 @@ import {
 	FILTER_NODE_TYPE,
 	REMOVE_DUPLICATES_NODE_TYPE,
 	SPLIT_OUT_NODE_TYPE,
+	SPLIT_OUT_NEW_NODE_TYPE,
 	LIMIT_NODE_TYPE,
 	SUMMARIZE_NODE_TYPE,
 	AGGREGATE_NODE_TYPE,
@@ -272,15 +273,15 @@ export function TriggerView(nodes: SimplifiedNodeType[]) {
 		title: i18n.baseText('nodeCreator.triggerHelperPanel.selectATrigger'),
 		subtitle: i18n.baseText('nodeCreator.triggerHelperPanel.selectATriggerDescription'),
 		items: [
-			{
-				key: DEFAULT_SUBCATEGORY,
-				type: 'subcategory',
-				properties: {
-					forceIncludeNodes: [WEBHOOK_NODE_TYPE, EMAIL_IMAP_NODE_TYPE],
-					title: 'App Trigger Nodes',
-					icon: 'satellite-dish',
-				},
-			},
+			// {
+			// 	key: DEFAULT_SUBCATEGORY,
+			// 	type: 'subcategory',
+			// 	properties: {
+			// 		forceIncludeNodes: [WEBHOOK_NODE_TYPE, EMAIL_IMAP_NODE_TYPE],
+			// 		title: 'App Trigger Nodes',
+			// 		icon: 'satellite-dish',
+			// 	},
+			// },
 			{
 				key: SCHEDULE_TRIGGER_NODE_TYPE,
 				type: 'node',
@@ -293,62 +294,62 @@ export function TriggerView(nodes: SimplifiedNodeType[]) {
 					icon: 'fa:clock',
 				},
 			},
-			{
-				key: WEBHOOK_NODE_TYPE,
-				type: 'node',
-				category: [CORE_NODES_CATEGORY],
-				properties: {
-					group: [],
-					name: WEBHOOK_NODE_TYPE,
-					displayName: i18n.baseText('nodeCreator.triggerHelperPanel.webhookTriggerDisplayName'),
-					description: i18n.baseText('nodeCreator.triggerHelperPanel.webhookTriggerDescription'),
-					iconData: {
-						type: 'file',
-						icon: 'webhook',
-						fileBuffer: '/static/webhook-icon.svg',
-					},
-				},
-			},
-			{
-				key: FORM_TRIGGER_NODE_TYPE,
-				type: 'node',
-				category: [CORE_NODES_CATEGORY],
-				properties: {
-					group: [],
-					name: FORM_TRIGGER_NODE_TYPE,
-					displayName: i18n.baseText('nodeCreator.triggerHelperPanel.formTriggerDisplayName'),
-					description: i18n.baseText('nodeCreator.triggerHelperPanel.formTriggerDescription'),
-					iconData: {
-						type: 'file',
-						icon: 'form',
-						fileBuffer: '/static/form-grey.svg',
-					},
-				},
-			},
-			{
-				key: MANUAL_TRIGGER_NODE_TYPE,
-				type: 'node',
-				category: [CORE_NODES_CATEGORY],
-				properties: {
-					group: [],
-					name: MANUAL_TRIGGER_NODE_TYPE,
-					displayName: i18n.baseText('nodeCreator.triggerHelperPanel.manualTriggerDisplayName'),
-					description: i18n.baseText('nodeCreator.triggerHelperPanel.manualTriggerDescription'),
-					icon: 'fa:mouse-pointer',
-				},
-			},
-			{
-				key: EXECUTE_WORKFLOW_TRIGGER_NODE_TYPE,
-				type: 'node',
-				category: [CORE_NODES_CATEGORY],
-				properties: {
-					group: [],
-					name: EXECUTE_WORKFLOW_TRIGGER_NODE_TYPE,
-					displayName: i18n.baseText('nodeCreator.triggerHelperPanel.workflowTriggerDisplayName'),
-					description: i18n.baseText('nodeCreator.triggerHelperPanel.workflowTriggerDescription'),
-					icon: 'fa:sign-out-alt',
-				},
-			},
+			// {
+			// 	key: WEBHOOK_NODE_TYPE,
+			// 	type: 'node',
+			// 	category: [CORE_NODES_CATEGORY],
+			// 	properties: {
+			// 		group: [],
+			// 		name: WEBHOOK_NODE_TYPE,
+			// 		displayName: i18n.baseText('nodeCreator.triggerHelperPanel.webhookTriggerDisplayName'),
+			// 		description: i18n.baseText('nodeCreator.triggerHelperPanel.webhookTriggerDescription'),
+			// 		iconData: {
+			// 			type: 'file',
+			// 			icon: 'webhook',
+			// 			fileBuffer: '/static/webhook-icon.svg',
+			// 		},
+			// 	},
+			// },
+			// {
+			// 	key: FORM_TRIGGER_NODE_TYPE,
+			// 	type: 'node',
+			// 	category: [CORE_NODES_CATEGORY],
+			// 	properties: {
+			// 		group: [],
+			// 		name: FORM_TRIGGER_NODE_TYPE,
+			// 		displayName: i18n.baseText('nodeCreator.triggerHelperPanel.formTriggerDisplayName'),
+			// 		description: i18n.baseText('nodeCreator.triggerHelperPanel.formTriggerDescription'),
+			// 		iconData: {
+			// 			type: 'file',
+			// 			icon: 'form',
+			// 			fileBuffer: '/static/form-grey.svg',
+			// 		},
+			// 	},
+			// },
+			// {
+			// 	key: MANUAL_TRIGGER_NODE_TYPE,
+			// 	type: 'node',
+			// 	category: [CORE_NODES_CATEGORY],
+			// 	properties: {
+			// 		group: [],
+			// 		name: MANUAL_TRIGGER_NODE_TYPE,
+			// 		displayName: i18n.baseText('nodeCreator.triggerHelperPanel.manualTriggerDisplayName'),
+			// 		description: i18n.baseText('nodeCreator.triggerHelperPanel.manualTriggerDescription'),
+			// 		icon: 'fa:mouse-pointer',
+			// 	},
+			// },
+			// {
+			// 	key: EXECUTE_WORKFLOW_TRIGGER_NODE_TYPE,
+			// 	type: 'node',
+			// 	category: [CORE_NODES_CATEGORY],
+			// 	properties: {
+			// 		group: [],
+			// 		name: EXECUTE_WORKFLOW_TRIGGER_NODE_TYPE,
+			// 		displayName: i18n.baseText('nodeCreator.triggerHelperPanel.workflowTriggerDisplayName'),
+			// 		description: i18n.baseText('nodeCreator.triggerHelperPanel.workflowTriggerDescription'),
+			// 		icon: 'fa:sign-out-alt',
+			// 	},
+			// },
 			{
 				type: 'subcategory',
 				key: OTHER_TRIGGER_NODES_SUBCATEGORY,
@@ -388,11 +389,11 @@ export function RegularView(nodes: SimplifiedNodeType[]) {
 					title: TRANSFORM_DATA_SUBCATEGORY,
 					icon: 'pen',
 					sections: [
-						{
-							key: 'popular',
-							title: i18n.baseText('nodeCreator.sectionNames.popular'),
-							items: [SET_NODE_TYPE, CODE_NODE_TYPE, DATETIME_NODE_TYPE],
-						},
+						// {
+						// 	key: 'popular',
+						// 	title: i18n.baseText('nodeCreator.sectionNames.popular'),
+						// 	items: [SET_NODE_TYPE, CODE_NODE_TYPE, DATETIME_NODE_TYPE],
+						// },
 						{
 							key: 'addOrRemove',
 							title: i18n.baseText('nodeCreator.sectionNames.transform.addOrRemove'),
@@ -400,6 +401,7 @@ export function RegularView(nodes: SimplifiedNodeType[]) {
 								FILTER_NODE_TYPE,
 								REMOVE_DUPLICATES_NODE_TYPE,
 								SPLIT_OUT_NODE_TYPE,
+								SPLIT_OUT_NEW_NODE_TYPE,
 								LIMIT_NODE_TYPE,
 							],
 						},

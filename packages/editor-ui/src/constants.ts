@@ -171,6 +171,7 @@ export const CONVERT_TO_FILE_NODE_TYPE = 'n8n-nodes-base.convertToFile';
 export const DATETIME_NODE_TYPE = 'n8n-nodes-base.dateTime';
 export const REMOVE_DUPLICATES_NODE_TYPE = 'n8n-nodes-base.removeDuplicates';
 export const SPLIT_OUT_NODE_TYPE = 'n8n-nodes-base.splitOut';
+export const SPLIT_OUT_NEW_NODE_TYPE = 'n8n-nodes-base.splitOutNew';
 export const LIMIT_NODE_TYPE = 'n8n-nodes-base.limit';
 export const SUMMARIZE_NODE_TYPE = 'n8n-nodes-base.summarize';
 export const AGGREGATE_NODE_TYPE = 'n8n-nodes-base.aggregate';

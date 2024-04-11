@@ -4312,7 +4312,7 @@ export const nodeTypeHttpRequestV1 = {
 	name: 'n8n-nodes-base.httpRequest',
 	group: ['output'],
 	subtitle: '={{$parameter["requestMethod"] + ": " + $parameter["url"]}}',
-	description: 'Makes an HTTP request and returns the response data',
+	description: 'Makes an HTTP request and returns the response data => HTTP-1111',
 	defaultVersion: 4.1,
 	version: 1,
 	defaults: { name: 'HTTP Request', color: '#2200DD' },

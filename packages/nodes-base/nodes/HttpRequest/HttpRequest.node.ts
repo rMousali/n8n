@@ -13,7 +13,7 @@ export class HttpRequest extends VersionedNodeType {
 			icon: 'file:httprequest.svg',
 			group: ['output'],
 			subtitle: '={{$parameter["requestMethod"] + ": " + $parameter["url"]}}',
-			description: 'Makes an HTTP request and returns the response data',
+			description: 'Makes an HTTP request and returns the response data => HTTP-22222',
 			defaultVersion: 4.1,
 		};
 

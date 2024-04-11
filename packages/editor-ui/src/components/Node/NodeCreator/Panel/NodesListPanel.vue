@@ -84,7 +84,6 @@ watch(
 			[AI_NODE_CREATOR_VIEW]: AIView,
 			[AI_OTHERS_NODE_CREATOR_VIEW]: AINodesView,
 		};
-
 		const itemKey = selectedView;
 		const matchedView = views[itemKey];
 
@@ -153,6 +152,7 @@ function onBackButton() {
 						:size="20"
 					/>
 					<p v-if="activeViewStack.title" :class="$style.title" v-text="activeViewStack.title" />
+					<p>=> NodesListPanel1111</p>
 				</div>
 				<p
 					v-if="activeViewStack.subtitle"

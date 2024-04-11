@@ -14,6 +14,7 @@ const props = withDefaults(defineProps<Props>(), {
 
 const categoryName = computed(() => {
 	const itemsCount = props.count || 0;
+	console.log('CategoryItem props', props);
 	return itemsCount > 0 ? `${props.name} (${itemsCount})` : props.name;
 });
 </script>

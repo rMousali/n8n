@@ -64,6 +64,7 @@ function onCreateMenuHoverIn(mouseinEvent: MouseEvent) {
 			}
 		}
 	};
+	console.log('mousemove', moveCallback);
 	document.addEventListener('mousemove', moveCallback, false);
 }
 
